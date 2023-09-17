@@ -8,7 +8,6 @@ import tkinter as tk
 import sys
 import threading
 
-
 APEKEY = None
 inputtxt = None
 displayError = None
@@ -72,18 +71,19 @@ def Start1():
         if APEKEY != None:
             print("Requesting Data!")
             r = requests.get("https://api.monkeytype.com/results/last", headers={'Authorization': 'ApeKey {value}'.format(value=APEKEY)})
-            if r == "200":
+            if r.status_code == 200:
                 print(r)
                 print(r.json()['data'])
                 DetailsValue = "Last Known WPM: {wpm}".format(wpm=r.json()['data']['wpm'])
                 RPC.update(large_text="Unofficial Monkeytype Rich Presence.",large_image="monkeytype",details=DetailsValue)
-            elif r == "404":
+            elif r.status_code == 404:
                 displayError.config(text = "Status: 404?! (monkeytype api is probably down)")
+            elif r.status_code == 472:
+                displayError.config(text = "Status: 472?! (not a valid ape key!)")
             else:
-                print(r)
-                displayError.config(text = "Status: Success! :)")
-                print(r.json()['data'])
-                DetailsValue = "Last Known WPM: {wpm}".format(wpm=r.json()['data']['wpm'])
+                print(r.status_code)
+                displayError.config(text = "Status: Error! :)")
+                DetailsValue = "Error Fetching WPM"
         else:
             displayError.config(text = "Status: Error! :(")
             print(APEKEY)
