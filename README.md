@@ -6,11 +6,15 @@ Show your monkeytype stats to others using Monkeytype Discord Rich Presence.
 Install the executable version from Releases and then run the executable. (im working on making an executable)
 
 If you want to install the python version
-Make sure to use pip to install tkinter.
+Make sure to use pip to install tkinter and pypresence.
 
 ```bash
 pip install tkinter
 ```
+```bash
+pip install pypresence
+```
+
 Then just run the main.py file.
 
 ## Note
