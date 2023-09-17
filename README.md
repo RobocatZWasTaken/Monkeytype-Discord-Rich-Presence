@@ -2,17 +2,27 @@
 Show your monkeytype stats to others using Monkeytype Discord Rich Presence.
 
 
-# How to get started
+## How to get started
 Install the executable version from Releases and then run the executable.
 
-If you want to install the python version.
-Make sure to use pip to install tkinter
+If you want to install the python version
+Make sure to use pip to install tkinter.
+
 ```bash
 pip install tkinter
 ```
 Then just run the main.py file.
 
-# Note
+## Note
 
 There is an issue that sometimes lets the code continue running even after closing the tinker window.
 Make sure to close the windown with task manager while i fix it.
+
+## Contributing
+Pull requests are welcome. For major changes, please open an issue first
+to discuss what you would like to change.
+
+
+## License
+
+[MIT](https://choosealicense.com/licenses/mit/)
