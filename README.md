@@ -15,8 +15,8 @@ Then just run the main.py file.
 
 ## Note
 
-There is an issue that sometimes lets the code continue running even after closing the tinker window.
-Make sure to close the windown with task manager while i fix it.
+I would not really use this code because its spaghetti code that has a ton of issues.
+If you want a better version than this try out https://premid.app/
 
 ## Contributing
 Pull requests are welcome. For major changes, please open an issue first
