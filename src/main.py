@@ -21,7 +21,7 @@ def UpdateApeKey():
         APEKEY = str(A)
         print("APEKEY: ",APEKEY)
     elif displayError != None:
-        displayError.config(text = "MAJOR ERROR HAS OCCURED (Error code 25)")
+        displayError.config(text = "error (contact robocatz)")
 
 
 
@@ -150,12 +150,12 @@ def my_mainloop():
                 print("Requesting Data!")
                 r = requests.get("https://api.monkeytype.com/results/last", headers={'Authorization': 'ApeKey {value}'.format(value=APEKEY)})
                 if r == "200":
-                    print(r.json()['data'])
+                    print(r.json())
                     DetailsValue = "Last Known WPM: {wpm}".format(wpm=r.json()['data']['wpm'])
                     RPC.update(large_text="Unofficial Monkeytype Rich Presence.",large_image="monkeytype",details=DetailsValue)
                 else:
                     print(r)
-                    print(r.json()['data'])
+                    print(r.json())
                     displayError.config(text = "Status: Success! :)")
                     DetailsValue = "Error Fetching WPM"
                     DetailsValue = "Last Known WPM: {wpm}".format(wpm=r.json()['data']['wpm'])
@@ -163,6 +163,6 @@ def my_mainloop():
                 displayError.config(text = "Status: Error! :(")
                 print(APEKEY)
                 DetailsValue = "Error Fetching WPM"
-                RPC.update(large_text="Unofficial Monkeytype Rich Presence.",large_image="monkeytype",details=DetailsValue,buttons=[{"label": "Play", "url": "https://Monkeytype.com"}])
+            RPC.update(large_text="Unofficial Monkeytype Rich Presence.",large_image="monkeytype",details=DetailsValue,buttons=[{"label": "Play", "url": "https://Monkeytype.com"}])
 
 my_mainloop()
