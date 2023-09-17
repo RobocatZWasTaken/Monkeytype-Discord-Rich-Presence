@@ -3,7 +3,7 @@ Show your monkeytype stats to others using Monkeytype Discord Rich Presence.
 
 
 ## How to get started
-Install the executable version from Releases and then run the executable.
+Install the executable version from Releases and then run the executable. (im working on making an executable)
 
 If you want to install the python version
 Make sure to use pip to install tkinter.
