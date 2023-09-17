@@ -73,8 +73,8 @@ def Start1():
             r = requests.get("https://api.monkeytype.com/results/last", headers={'Authorization': 'ApeKey {value}'.format(value=APEKEY)})
             if r.status_code == 200:
                 print(r)
-                print(r.json()['data'])
-                DetailsValue = "Last Known WPM: {wpm}".format(wpm=r.json()['data']['wpm'])
+                print(r.json())
+                DetailsValue = "Last Known WPM: {wpm}".format(wpm=r.json()['wpm'])
                 RPC.update(large_text="Unofficial Monkeytype Rich Presence.",large_image="monkeytype",details=DetailsValue)
             elif r.status_code == 404:
                 displayError.config(text = "Status: 404?! (monkeytype api is probably down)")
